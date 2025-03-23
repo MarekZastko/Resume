@@ -35,4 +35,4 @@ cd marek-resume
 npm install
 
 # 3. Start dev server
-npm start
+npm start# resume
