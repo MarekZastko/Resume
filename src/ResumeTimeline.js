@@ -11,12 +11,14 @@ import Footer from "./components/Footer";
 import DownloadButton from "./components/DownloadButton";
 import ScrollToTop from "./components/ScrollToTop";
 import ThemeToggle from "./components/ThemeToggle";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react"
 
 export default function ResumeTimeline() {
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
-    documentTitle: "Marek_Zastko_Resume",
+    documentTitle: "Resume_Marek_Zastko",
   });
 
   return (
@@ -38,6 +40,8 @@ export default function ResumeTimeline() {
         <Certificates />
         <Languages />
         <Footer />
+        <SpeedInsights/>
+        <Analytics/>
       </div>
     </>
   );

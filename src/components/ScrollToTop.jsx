@@ -6,10 +6,24 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShow(window.scrollY > 200);
+      const isMobile = window.innerWidth <= 768;
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const fullHeight = document.documentElement.scrollHeight;
+
+      if (isMobile) {
+        setShow(scrollTop + windowHeight >= fullHeight - 300);
+      } else {
+        setShow(scrollTop > 200);
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   const scrollToTop = () => {

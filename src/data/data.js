@@ -6,8 +6,8 @@ export const workExperience = [
     roles: [
       {
         title: "Agile Product Owner | Data Teams",
-        date: "December 2023 – January 2025 | (Full-time)",
-        location: "Bratislava, Slovakia",
+        date: "December 2023 – January 2025 | ",
+        location: "Bratislava, Slovakia | Full-time",
         responsibilities: [
           "Managing the entire product lifecycle from gathering requirements to implementation and final delivery to stakeholders",
           "Planning capacity and coordinating the work of six developers to maximize team efficiency and productivity",
@@ -25,19 +25,19 @@ export const workExperience = [
     roles: [
       {
         title: "Software Engineer 2",
-        date: "January 2024 – Present | (Full-time)",
-        location: "Bratislava, Slovakia",
+        date: "January 2024 – Present | ",
+        location: "Bratislava, Slovakia | Full-time",
         responsibilities: [
           "Developing a forecasting predictive model for budgeting all data service orders across Dell's global operations",
-          "Gathering, processing, and analyzing large datasets from multiple sources to ensure data integrity and reliability for predictive modeling",
+          "Gathering, processing, and analyzing large datasets from multiple sources to ensure data reliability for predictive modeling",
           "Continuously improving data acquisition and processing methods to enhance the precision of predictive models",
-          "Building and refining data models to forecast budget requirements and optimize resource allocation for data services worldwide"
+          "Refined models for global budget forecasting and resource planning"
         ]
       },
       {
         title: "Software Engineer 1",
-        date: "August 2022 – January 2024 | (Full-time)",
-        location: "Bratislava, Slovakia",
+        date: "August 2022 – January 2024 | ",
+        location: "Bratislava, Slovakia | Full-time",
         responsibilities: [
           "Collected, cleaned, and organized large sets of data from various sources",
           "Analyzed and interpreted data to identify trends, patterns, and insights",
@@ -54,14 +54,12 @@ export const workExperience = [
     roles: [
       {
         title: "Data Analytics Engineer",
-        date: "June 2023 – December 2023 | (Full-time)",
-        location: "Bratislava, Slovakia",
+        date: "June 2023 – December 2023 | ",
+        location: "Bratislava, Slovakia | Full-time",
         responsibilities: [
           "Developed complex SQL queries to extract and analyze data from various sources",
           "Conducted complex data analyses with a focus on identifying patterns and insights",
-          "Designed and maintained dashboards and reports in BI tools to monitor KPIs",
-          "Developed a machine learning model for churn prediction",
-          "Conducted exploratory market analyses for new product launches in Malta and Hungary, identifying key market trends and consumer behavior patterns"
+          "Designed and maintained dashboards and reports in BI tools to monitor KPIs"
         ]
       }
     ]
@@ -104,13 +102,54 @@ export const certificates = [
 
 // SKILLS
 export const hardSkills = [
-  "Python", "SQL", "ETL", "Business Intelligence", "Tableau", "GoodData",
-  "Data Analysis", "Jira", "VS Code"
+  // Data & Analytics
+  "Python",
+  "SQL",
+  "ETL",
+  "Power BI",
+  "Tableau",
+  "GoodData",
+  
+  // Algorithms & Code
+  "Data Structures",
+  "Algorithms",
+  "VS Code",
+  "GitHub",
+  
+  // Web / Frontend
+  "HTML & CSS",
+  "JavaScript",
+  "UX/UI Design",
+  "Wireframing",
+
+  // Backend / Integrácie
+  "APIs",
+  "JSON",
+  "UML Diagrams",
+
+  // Backend
+  "Jira",
+  "Confluence",
 ];
 
 export const softSkills = [
-  "Analytical Thinking", "Critical Thinking",
-  "Leadership", "Agile Methodologies"
+  // People & Thinking
+  "Communication",
+  "Leadership",
+  "Analytical Thinking",
+  "Critical Thinking",
+
+  // Product & Project Management
+  "Product Lifecycle Management",
+  "Backlog Management",
+  "Requirements Gathering",
+  "Stakeholder Management",
+  "Product Strategy",
+  "Planning & Prioritization",
+
+  // Methodologies
+  "Agile (Scrum)",
+  "Waterfall",
 ];
 
 // LANGUAGES
