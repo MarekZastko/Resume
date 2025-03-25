@@ -14,7 +14,18 @@ Remember: With great power comes great responsibility! 🦸‍♂️🦸‍♀�
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="theme-color" content="#ffffff" id="theme-color-meta" />
+    <script>
+      const userPref = localStorage.getItem("theme");
+      const systemPref = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const dark = userPref === "dark" || (!userPref && systemPref);
+
+      if (dark) {
+        document.documentElement.classList.add("dark");
+        document.write('<meta name="theme-color" content="#171717">');
+      } else {
+        document.write('<meta name="theme-color" content="#ffffff">');
+      }
+    </script>
 
     <title>Resume | Marek Zastko</title>
 
