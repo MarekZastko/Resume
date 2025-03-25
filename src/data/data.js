@@ -6,7 +6,7 @@ export const workExperience = [
     roles: [
       {
         title: "Agile Product Owner | Data Teams",
-        date: "December 2023 – January 2025 | ",
+        date: "December 2023 – January 2025",
         location: "Bratislava, Slovakia | Full-time",
         responsibilities: [
           "Managing the entire product lifecycle from gathering requirements to implementation and final delivery to stakeholders",
@@ -25,7 +25,7 @@ export const workExperience = [
     roles: [
       {
         title: "Software Engineer 2",
-        date: "January 2024 – Present | ",
+        date: "January 2024 – Present",
         location: "Bratislava, Slovakia | Full-time",
         responsibilities: [
           "Developing a forecasting predictive model for budgeting all data service orders across Dell's global operations",
@@ -36,7 +36,7 @@ export const workExperience = [
       },
       {
         title: "Software Engineer 1",
-        date: "August 2022 – January 2024 | ",
+        date: "August 2022 – January 2024",
         location: "Bratislava, Slovakia | Full-time",
         responsibilities: [
           "Collected, cleaned, and organized large sets of data from various sources",
@@ -54,7 +54,7 @@ export const workExperience = [
     roles: [
       {
         title: "Data Analytics Engineer",
-        date: "June 2023 – December 2023 | ",
+        date: "June 2023 – December 2023",
         location: "Bratislava, Slovakia | Full-time",
         responsibilities: [
           "Developed complex SQL queries to extract and analyze data from various sources",

@@ -13,7 +13,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        backgroundDark: "#171717", // custom ultra dark
+        backgroundDark: "#171717",
       },
     },
   },

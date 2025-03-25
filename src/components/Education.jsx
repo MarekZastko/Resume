@@ -48,7 +48,7 @@ export default function Education() {
           <div className="mb-2">
             <h4 className="font-medium text-lg text-gray-800 dark:text-gray-200">{edu.degree}</h4>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              {edu.date} – {edu.location}
+              {edu.date} | {edu.location}
             </p>
           </div>
 
