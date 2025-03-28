@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Linkedin, Github, Phone } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 
 export default function Header() {
   return (
@@ -28,15 +28,16 @@ export default function Header() {
       <h1 className="text-3xl font-bold text-gray-900 dark:text-white">Marek Zastko</h1>
       <p className="text-gray-600 dark:text-gray-300 text-base">Product Owner & Engineer</p>
 
-      <div className="text-sm text-gray-500 dark:text-gray-400 mt-2 mb-4">
-        Bratislava, Slovakia |
-        <a
-          href="tel:+421907040156"
-          className="ml-1 block sm:hidden hover:underline text-gray-500 dark:text-gray-400"
-        >
-          +421 907 040 156
-        </a>
-        <span className="ml-1 hidden sm:inline">+421 907 040 156</span>
+      <div className="text-sm text-gray-500 dark:text-gray-400 mt-2 mb-4 text-center">
+        <span className="block sm:inline">Bratislava, Slovakia</span>
+        <span className="hidden sm:inline"> | </span>
+        <span className="block sm:hidden">
+          {" "}
+          <a href="tel:+421907040156" className="hover:underline">
+            +421 907 040 156
+          </a>
+        </span>
+        <span className="hidden sm:inline">{" "}+421 907 040 156</span>
       </div>
 
       <div className="flex gap-4">
