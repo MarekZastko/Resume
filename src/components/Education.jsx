@@ -3,7 +3,7 @@ import { education } from "../data/data";
 
 export default function Education() {
   return (
-    <section className="mb-12 break-before-page print:break-before-page">
+    <section className="mb-12 break-before-page print:break-before-page print:pt-5">
       <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Education</h2>
       {education.map((edu, idx) => (
         <div key={idx} className="mb-8 border-l-2 pl-6 relative">

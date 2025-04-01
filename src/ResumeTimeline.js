@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import Header from "./components/Header";
 import About from "./components/About";
+import CareerTimeline from "./components/CareerTimeline";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
@@ -34,6 +35,7 @@ export default function ResumeTimeline() {
       >
         <Header />
         <About />
+        <CareerTimeline />
         <Experience />
         <Skills />
         <Education />

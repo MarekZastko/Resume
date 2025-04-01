@@ -2,32 +2,35 @@ import React, { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 
 export default function ThemeToggle() {
-  const [dark, setDark] = useState(false);
-  const [showMobile, setShowMobile] = useState(true);
-
-  useEffect(() => {
+  const [dark, setDark] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return savedTheme === "dark" || (!savedTheme && prefersDark);
+  });
 
-    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-      setDark(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setDark(false);
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
+  const [showMobile, setShowMobile] = useState(true);
+
+  const isMobileSafari = () => {
+    const ua = navigator.userAgent;
+    const isSafari = /^((?!chrome|android).)*safari/i.test(ua);
+    return /iPhone|iPad|iPod/.test(ua) && isSafari;
+  };
 
   useEffect(() => {
+    if (isMobileSafari()) {
+      document.documentElement.classList.add("disable-transitions");
+      setTimeout(() => {
+        document.documentElement.classList.remove("disable-transitions");
+      }, 200);
+    }
+
     document.documentElement.classList.toggle("dark", dark);
     localStorage.setItem("theme", dark ? "dark" : "light");
 
-    setTimeout(() => {
-      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-      if (metaThemeColor) {
-        metaThemeColor.setAttribute("content", dark ? "#171717" : "#ffffff");
-      }
-    }, 50);
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute("content", dark ? "#171717" : "#ffffff");
+    }
   }, [dark]);
 
   useEffect(() => {
@@ -38,12 +41,18 @@ export default function ThemeToggle() {
       }
     };
 
+    const handleBeforePrint = () => {
+      document.documentElement.classList.remove("dark");
+    };
+
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleScroll);
+    window.addEventListener("beforeprint", handleBeforePrint);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
+      window.removeEventListener("beforeprint", handleBeforePrint);
     };
   }, []);
 

@@ -3,16 +3,20 @@ import { hardSkills, softSkills } from "../data/data";
 
 export default function Skills() {
   return (
-    <section className="mb-12">
-      <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Skills</h2>
+    <section className="mb-12 print:break-inside-avoid">
+      <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white print:text-black">
+        Skills
+      </h2>
 
       <div className="mb-4">
-        <h3 className="text-lg font-medium mb-2 text-gray-700 dark:text-gray-300">Hard Skills</h3>
+        <h3 className="text-sm font-semibold mb-2 text-gray-600 dark:text-gray-400 print:text-black">
+          Hard Skills
+        </h3>
         <div className="flex flex-wrap gap-2">
           {hardSkills.map((skill, idx) => (
             <span
               key={idx}
-              className="bg-blue-100 dark:bg-blue-800 dark:text-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+              className="bg-blue-100 dark:bg-blue-800 dark:text-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm print:text-blue-800 print:bg-blue-100 print:rounded-full print:px-3 print:py-1"
             >
               {skill}
             </span>
@@ -21,12 +25,14 @@ export default function Skills() {
       </div>
 
       <div>
-        <h3 className="text-lg font-medium mb-2 text-gray-700 dark:text-gray-300">Soft Skills</h3>
+        <h3 className="text-sm font-semibold mb-2 text-gray-600 dark:text-gray-400 print:text-black">
+          Soft Skills
+        </h3>
         <div className="flex flex-wrap gap-2">
           {softSkills.map((skill, idx) => (
             <span
               key={idx}
-              className="bg-gray-100 dark:bg-gray-700 dark:text-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm"
+              className="bg-gray-100 dark:bg-gray-700 dark:text-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm print:text-gray-800 print:bg-gray-100 print:rounded-full print:px-3 print:py-1"
             >
               {skill}
             </span>

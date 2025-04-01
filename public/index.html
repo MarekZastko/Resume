@@ -14,17 +14,20 @@ Remember: With great power comes great responsibility! 🦸‍♂️🦸‍♀�
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- 🌓 Apply theme before React loads -->
     <script>
-      const userPref = localStorage.getItem("theme");
-      const systemPref = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const dark = userPref === "dark" || (!userPref && systemPref);
+      (function () {
+        const userPref = localStorage.getItem("theme");
+        const systemPref = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const isDark = userPref === "dark" || (!userPref && systemPref);
 
-      if (dark) {
-        document.documentElement.classList.add("dark");
-        document.write('<meta name="theme-color" content="#171717">');
-      } else {
-        document.write('<meta name="theme-color" content="#ffffff">');
-      }
+        document.documentElement.classList.toggle("dark", isDark);
+
+        const meta = document.createElement("meta");
+        meta.name = "theme-color";
+        meta.content = isDark ? "#171717" : "#ffffff";
+        document.head.appendChild(meta);
+      })();
     </script>
 
     <title>Resume | Marek Zastko</title>

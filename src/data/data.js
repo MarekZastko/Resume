@@ -20,6 +20,22 @@ export const workExperience = [
     ]
   },
   {
+    company: "Global Payments",
+    logo: "/logos/GlobalPayments.png",
+    roles: [
+      {
+        title: "Data Analytics Engineer",
+        date: "June 2023 – December 2023",
+        location: "Bratislava, Slovakia | Full-time",
+        responsibilities: [
+          "Developed complex SQL queries to extract and analyze data from various sources",
+          "Conducted complex data analyses with a focus on identifying patterns and insights",
+          "Designed and maintained dashboards and reports in BI tools to monitor KPIs"
+        ]
+      }
+    ]
+  },
+  {
     company: "Dell Technologies",
     logo: "/logos/DellTechnologies.png",
     roles: [
@@ -44,22 +60,6 @@ export const workExperience = [
           "Created reports, dashboards, and visualizations to present findings to stakeholders",
           "Communicated with stakeholders to understand their needs and provided relevant information",
           "Supported decision-making by supplying relevant data to management"
-        ]
-      }
-    ]
-  },
-  {
-    company: "Global Payments",
-    logo: "/logos/GlobalPayments.png",
-    roles: [
-      {
-        title: "Data Analytics Engineer",
-        date: "June 2023 – December 2023",
-        location: "Bratislava, Slovakia | Full-time",
-        responsibilities: [
-          "Developed complex SQL queries to extract and analyze data from various sources",
-          "Conducted complex data analyses with a focus on identifying patterns and insights",
-          "Designed and maintained dashboards and reports in BI tools to monitor KPIs"
         ]
       }
     ]
@@ -88,7 +88,7 @@ export const education = [
   }
 ];
 
-// CERTIFICATES (structured)
+// CERTIFICATES
 export const certificates = [
   {
     course: "Power BI Fundamentals for End Users",
@@ -109,13 +109,13 @@ export const hardSkills = [
   "Power BI",
   "Tableau",
   "GoodData",
-  
+
   // Algorithms & Code
   "Data Structures",
   "Algorithms",
   "VS Code",
   "GitHub",
-  
+
   // Web / Frontend
   "HTML & CSS",
   "JavaScript",
@@ -127,9 +127,9 @@ export const hardSkills = [
   "JSON",
   "UML Diagrams",
 
-  // Backend
+  // Tools
   "Jira",
-  "Confluence",
+  "Confluence"
 ];
 
 export const softSkills = [
@@ -149,7 +149,7 @@ export const softSkills = [
 
   // Methodologies
   "Agile (Scrum)",
-  "Waterfall",
+  "Waterfall"
 ];
 
 // LANGUAGES

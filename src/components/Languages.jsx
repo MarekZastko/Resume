@@ -1,40 +1,50 @@
 import React from "react";
 import { languages } from "../data/data";
 
-const getLevelPercent = (level) => {
-  switch (level) {
-    case "C2":
-      return 100;
-    case "C1":
-      return 85;
-    case "B2":
-      return 70;
-    case "B1":
-      return 40;
-    default:
-      return 40;
-  }
+const languageLevels = {
+  A1: 1,
+  A2: 2,
+  B1: 3,
+  B2: 4,
+  C1: 5,
+  C2: 6
 };
 
-export default function Languages() {
+const levelColors = {
+  C2: "bg-blue-600",
+  C1: "bg-blue-500",
+  B1: "bg-blue-400",
+  B2: "bg-blue-400",
+  A2: "bg-blue-300",
+  A1: "bg-blue-200"
+};
+
+export default function LanguageTimeline() {
   return (
     <section className="mb-12">
-      <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Languages</h2>
-      <div className="space-y-4">
-        {languages.map((lang, idx) => (
-          <div key={idx} className="flex flex-col gap-1">
-            <div className="flex justify-between items-center text-gray-800 dark:text-gray-200 font-medium">
-              <span>{lang.name}</span>
-              <span className="text-sm text-gray-500 dark:text-gray-400">{lang.level}</span>
+      <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white text-left">
+        Languages
+      </h2>
+      <div className="space-y-6">
+        {languages.map((lang, i) => {
+          const levelValue = languageLevels[lang.level] || 0;
+          const width = (levelValue / 6) * 100;
+          const color = levelColors[lang.level] || "bg-blue-300";
+
+          return (
+            <div key={i} className="w-full">
+              <p className="mb-1 text-sm text-gray-700 dark:text-gray-300 font-medium">
+                {lang.name} ({lang.level})
+              </p>
+              <div className="relative h-4 bg-gray-200 dark:bg-zinc-800 rounded overflow-hidden">
+                <div
+                  className={`absolute top-0 h-full ${color} rounded`}
+                  style={{ width: `${width}%`, left: 0 }}
+                ></div>
+              </div>
             </div>
-            <div className="w-full h-2 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-800">
-              <div
-                className="h-full rounded-full bg-blue-500 dark:bg-blue-400 transition-all duration-300"
-                style={{ width: `${getLevelPercent(lang.level)}%` }}
-              ></div>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

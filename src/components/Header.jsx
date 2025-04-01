@@ -41,7 +41,7 @@ export default function Header() {
       </div>
 
       <div className="flex gap-4">
-        <a href="mailto:zastkomarek@gmail.com" className="hover:text-blue-600">
+        <a href="mailto:zastkomarek@gmail.com" className="hover:text-blue-600" aria-label="Email Marek Zastko">
           <Mail />
         </a>
         <a
@@ -49,6 +49,7 @@ export default function Header() {
           target="_blank"
           rel="noreferrer"
           className="hover:text-blue-600"
+          aria-label="LinkedIn Marek Zastko"
         >
           <Linkedin />
         </a>
@@ -57,6 +58,7 @@ export default function Header() {
           target="_blank"
           rel="noreferrer"
           className="hover:text-blue-600"
+          aria-label="GitHub Marek Zastko"
         >
           <Github />
         </a>
