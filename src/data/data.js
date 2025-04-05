@@ -1,4 +1,3 @@
-// WORK EXPERIENCE
 export const workExperience = [
   {
     company: "GymBeam",
@@ -66,7 +65,6 @@ export const workExperience = [
   }
 ];
 
-// EDUCATION
 export const education = [
   {
     school: "Comenius University",
@@ -88,7 +86,6 @@ export const education = [
   }
 ];
 
-// CERTIFICATES
 export const certificates = [
   {
     course: "Power BI Fundamentals for End Users",
@@ -100,9 +97,7 @@ export const certificates = [
   }
 ];
 
-// SKILLS
 export const hardSkills = [
-  // Data & Analytics
   "Python",
   "SQL",
   "ETL",
@@ -110,36 +105,30 @@ export const hardSkills = [
   "Tableau",
   "GoodData",
 
-  // Algorithms & Code
   "Data Structures",
   "Algorithms",
   "VS Code",
   "GitHub",
 
-  // Web / Frontend
   "HTML & CSS",
   "JavaScript",
   "UX/UI Design",
   "Wireframing",
 
-  // Backend / Integrácie
   "APIs",
   "JSON",
   "UML Diagrams",
 
-  // Tools
   "Jira",
   "Confluence"
 ];
 
 export const softSkills = [
-  // People & Thinking
   "Communication",
   "Leadership",
   "Analytical Thinking",
   "Critical Thinking",
 
-  // Product & Project Management
   "Product Lifecycle Management",
   "Backlog Management",
   "Requirements Gathering",
@@ -147,12 +136,10 @@ export const softSkills = [
   "Product Strategy",
   "Planning & Prioritization",
 
-  // Methodologies
   "Agile (Scrum)",
   "Waterfall"
 ];
 
-// LANGUAGES
 export const languages = [
   { name: "Slovak", level: "C2" },
   { name: "English", level: "C1" },

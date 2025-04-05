@@ -1,24 +1,24 @@
-# ✅ Dependencies
+# Dependencies
 node_modules/
 
-# ✅ Build outputs
+# Build outputs
 build/
 dist/
 
-# ✅ Local environment variables
+# Local environment variables
 .env
 .env.*    # napr. .env.local, .env.production
 !.env.example
 
-# ✅ Logs
+# Logs
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
 
-# ✅ Coverage from testing
+# Coverage from testing
 coverage/
 
-# ✅ OS & Editor files
+# OS & Editor files
 .DS_Store
 Thumbs.db
 *.swp
@@ -26,10 +26,10 @@ Thumbs.db
 .idea/
 .vscode/
 
-# ✅ Vercel CLI
+# Vercel CLI
 .vercel/
 
-# ✅ Optional caches
+# Optional caches
 .cache/
 .pnp/
 .pnp.js

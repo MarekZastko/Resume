@@ -8,6 +8,7 @@ export default function Header() {
         <img
           src="/MarekZastko.jpg"
           alt="Marek Zastko"
+          loading="eager"
           className="rounded-full shadow object-cover w-full h-full animate-float print:animate-none print:shadow-none"
         />
 

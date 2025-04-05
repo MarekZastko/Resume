@@ -9,6 +9,7 @@ export default function ThemeToggle() {
   });
 
   const [showMobile, setShowMobile] = useState(true);
+  const [originalTheme, setOriginalTheme] = useState("light");
 
   const isMobileSafari = () => {
     const ua = navigator.userAgent;
@@ -42,19 +43,35 @@ export default function ThemeToggle() {
     };
 
     const handleBeforePrint = () => {
+      setOriginalTheme(dark ? "dark" : "light");
       document.documentElement.classList.remove("dark");
+    };
+
+    const handleAfterPrint = () => {
+      if (originalTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+      if (metaThemeColor) {
+        metaThemeColor.setAttribute("content", originalTheme === "dark" ? "#171717" : "#ffffff");
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleScroll);
     window.addEventListener("beforeprint", handleBeforePrint);
+    window.addEventListener("afterprint", handleAfterPrint);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
       window.removeEventListener("beforeprint", handleBeforePrint);
+      window.removeEventListener("afterprint", handleAfterPrint);
     };
-  }, []);
+  }, [dark, originalTheme]);
 
   return (
     <button
