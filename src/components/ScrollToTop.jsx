@@ -28,6 +28,8 @@ export default function ScrollToTop() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    window.gtag?.("event", "scroll_to_top");
   };
 
   if (!show) return null;

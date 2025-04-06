@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { hardSkills, softSkills } from "../data/data";
 
 export default function Skills() {
+  const ref = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          window.gtag?.("event", "section_view", {
+            section: "skills",
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="mb-12 print:break-inside-avoid">
+    <section ref={ref} className="mb-12 print:break-inside-avoid">
       <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white print:text-black">
         Skills
       </h2>

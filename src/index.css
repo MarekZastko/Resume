@@ -94,10 +94,11 @@ body {
   .bg-purple-500,
   .bg-green-500,
   .text-white,
+  .text-blue-600,
   .text-blue-800,
-  .text-gray-800,
   .text-gray-600,
-  .text-gray-700 {
+  .text-gray-700,
+  .text-gray-800 {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }

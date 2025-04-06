@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { languages } from "../data/data";
 
 const languageLevels = {
@@ -20,8 +20,27 @@ const levelColors = {
 };
 
 export default function LanguageTimeline() {
+  const ref = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          window.gtag?.("event", "section_view", {
+            section: "languages",
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="mb-12">
+    <section ref={ref} className="mb-12">
       <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white text-left">
         Languages
       </h2>

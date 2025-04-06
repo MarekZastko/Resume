@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { workExperience } from "../data/data";
 
 export default function Experience() {
+  const ref = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          window.gtag?.("event", "section_view", {
+            section: "experience",
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="mb-12">
+    <section ref={ref} className="mb-12">
       <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">
         Work Experience
       </h2>
@@ -37,10 +56,10 @@ export default function Experience() {
                   const achievements =
                     company.company === "GymBeam"
                       ? [
-                          "Relaunched agile processes, resulting in a 100% increase in team delivery and overall efficiency",
-                          "Successfully cleaned up over 200 outdated tickets and bugs, streamlining the team’s backlog and improving focus",
-                          "Oversaw both engineering and analytics teams from a product perspective, ensuring alignment and consistent delivery",
-                          "Set up and maintained the company Atlassian ecosystem, standardizing workflows and improving cross-team collaboration",
+                          "Relaunched agile processes, leading to a 100% increase in team delivery and overall efficiency",
+                          "Cleaned up over 200 outdated tickets and bugs, streamlining the backlog and significantly improving team focus",
+                          "Oversaw both engineering and analytics team from a product perspective, ensuring alignment and consistent delivery",
+                          "Set up and maintained the company Atlassian ecosystem, standardizing workflows and improving cross-team collaboration"
                         ]
                       : company.company === "Global Payments"
                       ? [

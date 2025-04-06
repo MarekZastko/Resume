@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const jobs = [
   {
     company: "GymBeam",
-    start: new Date("2023-12-01"),
+    start: new Date("2024-01-01"),
     end: new Date("2025-01-31"),
     color: "bg-blue-400"
   },
@@ -26,8 +26,27 @@ const endYear = 2025;
 const yearMonths = (endYear - startYear + 1) * 12;
 
 export default function CareerTimeline() {
+  const ref = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          window.gtag?.("event", "section_view", {
+            section: "career_timeline",
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="mb-12">
+    <section ref={ref} className="mb-12">
       <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white text-left">
         Career Timeline
       </h2>

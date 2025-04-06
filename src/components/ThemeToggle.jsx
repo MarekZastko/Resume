@@ -73,9 +73,18 @@ export default function ThemeToggle() {
     };
   }, [dark, originalTheme]);
 
+  const handleToggle = () => {
+    const newTheme = !dark ? "dark" : "light";
+    setDark(!dark);
+
+    window.gtag?.("event", "theme_toggle", {
+      mode: newTheme,
+    });
+  };
+
   return (
     <button
-      onClick={() => setDark(!dark)}
+      onClick={handleToggle}
       className={`
         fixed top-4 right-4 z-50 p-2 rounded-full bg-transparent
         hover:bg-gray-100 dark:hover:bg-white/10

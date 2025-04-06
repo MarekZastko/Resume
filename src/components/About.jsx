@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function About() {
+  const ref = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          window.gtag?.("event", "section_view", {
+            section: "about",
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="mb-12">
+    <section ref={ref} className="mb-12">
       <h2 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">About Me</h2>
       <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
-        I’m a results-oriented <strong>Product Owner</strong> and <strong>Engineer</strong> with a passion for clear data visualization,
-        robust data models, and effective collaboration across teams and stakeholders.
-        I've gained experience in high-growth companies like <strong>GymBeam</strong>, <strong>Dell Technologies</strong>, and <strong>Global Payments</strong>,
-        where I led projects from concept to delivery, blending business logic with technical precision
+        I’m a results-oriented <strong>Product Owner</strong> and <strong>Engineer</strong> who loves bringing <strong>structure</strong> into chaos, turning ideas into outcomes, and helping people do their best work.
+        My background spans <strong>tech, business, and strategy</strong>, with hands-on experience from companies like <strong>GymBeam</strong>, <strong>Dell</strong>, and <strong>Global Payments</strong>. I enjoy leading, optimizing, and building things that actually make a difference
       </p>
     </section>
   );

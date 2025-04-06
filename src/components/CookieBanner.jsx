@@ -41,12 +41,14 @@ export default function CookieBanner() {
     localStorage.setItem("cookie-accepted", "true");
     setVisible(false);
     setShowIcon(true);
+    window.gtag?.("event", "cookie_accept");
   };
 
   const handleDecline = () => {
     localStorage.setItem("cookie-declined", "true");
     setVisible(false);
     setShowIcon(true);
+    window.gtag?.("event", "cookie_decline");
   };
 
   const resetChoice = () => {
@@ -54,6 +56,11 @@ export default function CookieBanner() {
     localStorage.removeItem("cookie-declined");
     setVisible(true);
     setShowIcon(false);
+    window.gtag?.("event", "cookie_settings_reopened");
+  };
+
+  const handlePrivacyClick = () => {
+    window.gtag?.("event", "cookie_learn_more");
   };
 
   return (
@@ -69,7 +76,7 @@ export default function CookieBanner() {
               fixed z-50 bg-white/90 dark:bg-zinc-900/90 border border-gray-200 dark:border-zinc-700 backdrop-blur-md shadow-xl rounded-xl text-sm text-gray-800 dark:text-gray-100 print:hidden
               ${isMobile
                 ? "bottom-8 left-0 right-0 mx-auto w-[90%] max-w-sm px-5 py-4"
-                : "bottom-6 left-6 w-[190px] px-4 py-5"
+                : "bottom-6 left-0 right-0 mx-auto w-[95%] max-w-4xl px-6 py-4"
               }
               flex flex-col items-center
             `}
@@ -82,7 +89,13 @@ export default function CookieBanner() {
               We use cookies to enhance your experience
             </p>
             <p className="text-center text-xs text-blue-600 dark:text-blue-400 underline hover:opacity-80 mb-2">
-              <Link to="/privacy">Learn more</Link>
+              <Link
+                to="/privacy"
+                onClick={handlePrivacyClick}
+                aria-label="Read our full Privacy Policy"
+              >
+                Learn more
+              </Link>
             </p>
 
             <div className="flex flex-col gap-2 mt-2 w-full">
