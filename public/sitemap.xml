@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap-style.xsl"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://marekzastko.vercel.app/</loc>
@@ -9,14 +10,14 @@
   <url>
     <loc>https://marekzastko.vercel.app/showroom</loc>
     <lastmod>2025-03-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://marekzastko.vercel.app/privacy</loc>
     <lastmod>2025-03-29</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://marekzastko.vercel.app/404</loc>

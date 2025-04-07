@@ -3,6 +3,8 @@ import { Lock } from "lucide-react";
 
 export default function Privacy() {
   useEffect(() => {
+    document.title = "Privacy | Marek Zastko";
+    
     const cookieIcon = document.getElementById("cookie-icon");
     if (window.location.pathname === "/privacy" && cookieIcon) {
       cookieIcon.style.display = "none";

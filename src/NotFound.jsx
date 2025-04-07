@@ -6,6 +6,8 @@ export default function NotFound() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "404 | Marek Zastko";
+    
     window.gtag?.("event", "page_view", {
       page_path: "/404",
       page_title: "404",

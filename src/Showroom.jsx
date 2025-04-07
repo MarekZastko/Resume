@@ -22,6 +22,8 @@ import {
 
 export default function Showroom() {
   useEffect(() => {
+    document.title = "Showroom | Marek Zastko";
+    
     const cookieIcon = document.getElementById("cookie-icon");
     if (window.location.pathname === "/showroom" && cookieIcon) {
       cookieIcon.style.display = "none";
