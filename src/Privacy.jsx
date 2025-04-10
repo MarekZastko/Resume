@@ -4,7 +4,12 @@ import { Lock } from "lucide-react";
 export default function Privacy() {
   useEffect(() => {
     document.title = "Privacy | Marek Zastko";
-    
+
+    const canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    canonical.href = "https://www.marekzastko.com/privacy";
+    document.head.appendChild(canonical);
+
     const cookieIcon = document.getElementById("cookie-icon");
     if (window.location.pathname === "/privacy" && cookieIcon) {
       cookieIcon.style.display = "none";
@@ -14,6 +19,10 @@ export default function Privacy() {
       page_path: "/privacy",
       page_title: "Privacy",
     });
+
+    return () => {
+      document.head.removeChild(canonical);
+    };
   }, []);
 
   const handleBackClick = () => {
@@ -31,11 +40,11 @@ export default function Privacy() {
         </div>
         <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
           We respect your privacy. This website does not use personal tracking, does not share data with third parties,
-          and only uses basic analytics to understand usage patterns. No personally identifiable information is collected.
+          and only uses basic analytics to understand usage patterns. No personally identifiable information is collected
         </p>
 
         <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-          Cookies are used solely to enhance user experience. You can choose to accept or decline them. No third-party cookies are used.
+          Cookies are used solely to enhance user experience. You can choose to accept or decline them. No third-party cookies are used
         </p>
 
         <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">

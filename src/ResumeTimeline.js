@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import Header from "./components/Header";
 import About from "./components/About";
@@ -13,14 +13,33 @@ import DownloadButton from "./components/DownloadButton";
 import ScrollToTop from "./components/ScrollToTop";
 import ThemeToggle from "./components/ThemeToggle";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 export default function ResumeTimeline() {
   const componentRef = useRef();
+
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
     documentTitle: "Resume_Marek_Zastko",
   });
+
+  useEffect(() => {
+    document.title = "Resume | Marek Zastko";
+
+    const canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    canonical.href = "https://www.marekzastko.com/";
+    document.head.appendChild(canonical);
+
+    window.gtag?.("event", "page_view", {
+      page_path: "/",
+      page_title: "Resume",
+    });
+
+    return () => {
+      document.head.removeChild(canonical);
+    };
+  }, []);
 
   return (
     <>
@@ -42,8 +61,8 @@ export default function ResumeTimeline() {
         <Certificates />
         <Languages />
         <Footer />
-        <SpeedInsights/>
-        <Analytics/>
+        <SpeedInsights />
+        <Analytics />
       </div>
     </>
   );

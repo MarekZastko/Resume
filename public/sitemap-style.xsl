@@ -18,7 +18,7 @@
         </style>
       </head>
       <body>
-        <h1>Sitemap for marekzastko.vercel.app</h1>
+        <h1>Sitemap for marekzastko.com</h1>
         <table>
           <tr>
             <th>URL</th>

@@ -7,11 +7,20 @@ export default function NotFound() {
 
   useEffect(() => {
     document.title = "404 | Marek Zastko";
-    
+
+    const canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    canonical.href = "https://www.marekzastko.com/404";
+    document.head.appendChild(canonical);
+
     window.gtag?.("event", "page_view", {
       page_path: "/404",
       page_title: "404",
     });
+
+    return () => {
+      document.head.removeChild(canonical);
+    };
   }, []);
 
   const handleBackClick = () => {

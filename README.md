@@ -2,7 +2,7 @@
 
 A modern, minimalist, and fully responsive **interactive resume** built with React, Tailwind CSS and Framer Motion — optimized for both web and print.
 
-🌐 **Live demo**: [marekzastko.vercel.app](https://marekzastko.vercel.app)
+🌐 **Live demo**: [marekzastko.com](https://marekzastko.com/)
 
 ---
 

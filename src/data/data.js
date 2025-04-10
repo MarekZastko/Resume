@@ -67,7 +67,7 @@ export const workExperience = [
 
 export const education = [
   {
-    school: "Comenius University",
+    school: "Comenius University Bratislava",
     logo: "/logos/Comenius.png",
     degree: "Management Information Systems - External Studies",
     location: "Bratislava, Slovakia",

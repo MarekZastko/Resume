@@ -23,7 +23,12 @@ import {
 export default function Showroom() {
   useEffect(() => {
     document.title = "Showroom | Marek Zastko";
-    
+
+    const canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    canonical.href = "https://www.marekzastko.com/showroom";
+    document.head.appendChild(canonical);
+
     const cookieIcon = document.getElementById("cookie-icon");
     if (window.location.pathname === "/showroom" && cookieIcon) {
       cookieIcon.style.display = "none";
@@ -33,6 +38,10 @@ export default function Showroom() {
       page_path: "/showroom",
       page_title: "Showroom",
     });
+
+    return () => {
+      document.head.removeChild(canonical);
+    };
   }, []);
 
   const handleBackClick = () => {
