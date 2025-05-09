@@ -10,6 +10,11 @@ export default function Privacy() {
     canonical.href = "https://www.marekzastko.com/privacy";
     document.head.appendChild(canonical);
 
+    const robots = document.createElement("meta");
+    robots.name = "robots";
+    robots.content = "noindex";
+    document.head.appendChild(robots);
+
     const cookieIcon = document.getElementById("cookie-icon");
     if (window.location.pathname === "/privacy" && cookieIcon) {
       cookieIcon.style.display = "none";
@@ -22,6 +27,7 @@ export default function Privacy() {
 
     return () => {
       document.head.removeChild(canonical);
+      document.head.removeChild(robots);
     };
   }, []);
 

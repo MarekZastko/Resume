@@ -11,18 +11,6 @@
     <loc>https://www.marekzastko.com/showroom</loc>
     <lastmod>2025-03-29</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.marekzastko.com/privacy</loc>
-    <lastmod>2025-03-29</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.marekzastko.com/404</loc>
-    <lastmod>2025-03-29</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.1</priority>
+    <priority>0.5</priority>
   </url>
 </urlset>

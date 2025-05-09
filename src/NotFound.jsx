@@ -13,6 +13,11 @@ export default function NotFound() {
     canonical.href = "https://www.marekzastko.com/404";
     document.head.appendChild(canonical);
 
+    const robots = document.createElement("meta");
+    robots.name = "robots";
+    robots.content = "noindex";
+    document.head.appendChild(robots);
+
     window.gtag?.("event", "page_view", {
       page_path: "/404",
       page_title: "404",
@@ -20,6 +25,7 @@ export default function NotFound() {
 
     return () => {
       document.head.removeChild(canonical);
+      document.head.removeChild(robots);
     };
   }, []);
 

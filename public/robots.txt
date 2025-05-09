@@ -1,5 +1,7 @@
 User-agent: *
 Disallow: /og-cover.jpg
+Disallow: /privacy
+Disallow: /404
 
 Allow: /
 Sitemap: https://www.marekzastko.com/sitemap.xml

@@ -8,7 +8,7 @@
     <html>
       <head>
         <title>Sitemap | Marek Zastko</title>
-        <link rel="icon" type="image/png" href="/favicon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <style>
           body { font-family: system-ui, sans-serif; padding: 2rem; color: #333; background: #f9fafb; }
           h1 { font-size: 1.5rem; color: #2563eb; }
