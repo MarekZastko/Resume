@@ -1,5 +1,17 @@
 export const workExperience = [
   {
+    company: "Slovenská sporiteľňa",
+    logo: "/logos/SLSP.png",
+    roles: [
+      {
+        title: "Business Analyst / Product Owner",
+        date: "June 2025 – Present",
+        location: "Bratislava, Slovakia | Full-time",
+        responsibilities: []
+      }
+    ]
+  },
+  {
     company: "GymBeam",
     logo: "/logos/GymBeam.png",
     roles: [
@@ -40,7 +52,7 @@ export const workExperience = [
     roles: [
       {
         title: "Software Engineer 2",
-        date: "January 2024 – Present",
+        date: "January 2024 – May 2025",
         location: "Bratislava, Slovakia | Full-time",
         responsibilities: [
           "Developing a forecasting predictive model for budgeting all data service orders across Dell's global operations",
