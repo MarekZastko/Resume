@@ -79,7 +79,7 @@ export default function CareerTimeline() {
           );
         })}
         <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-2">
-          {[2022, 2023, 2024, 2025, 2026].map((year) => (
+          {[2022, 2025].map((year) => (
             <span key={year}>{year}</span>
           ))}
         </div>
