@@ -4,7 +4,7 @@ export const workExperience = [
     logo: "/logos/SLSP.png",
     roles: [
       {
-        title: "Business Analyst / Product Owner",
+        title: "IT Analyst",
         date: "June 2025 – Present",
         location: "Bratislava, Slovakia | Full-time",
         responsibilities: []
@@ -24,7 +24,6 @@ export const workExperience = [
           "Planned capacity and coordinated the work of six developers to maximize team efficiency and productivity",
           "Presented sprint reports to the CEO and company leadership, delivering clear updates on progress and outcomes",
           "Reported directly to the CTO as the sole Product Owner for the Data team, owning all product-related activities",
-          "Strengthened stakeholder relationships, resulting in higher satisfaction and smoother sprint execution",
           "Led agile ceremonies to improve team alignment and ensure timely project delivery"
         ]
       }
