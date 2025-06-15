@@ -16,14 +16,13 @@ export const workExperience = [
     logo: "/logos/GymBeam.png",
     roles: [
       {
-        title: "Product Owner | Data Team",
+        title: "Product Owner",
         date: "December 2023 – January 2025",
         location: "Bratislava, Slovakia | Full-time",
         responsibilities: [
           "Managed the entire product lifecycle, from gathering requirements to implementation and final delivery to stakeholders",
           "Planned capacity and coordinated the work of six developers to maximize team efficiency and productivity",
           "Presented sprint reports to the CEO and company leadership, delivering clear updates on progress and outcomes",
-          "Reported directly to the CTO as the sole Product Owner for the Data team, owning all product-related activities",
           "Led agile ceremonies to improve team alignment and ensure timely project delivery"
         ]
       }
